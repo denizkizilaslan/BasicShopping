@@ -10,13 +10,10 @@ namespace BasicShopping.API.Controllers
     public class BasketController : ControllerBase
     {
         private readonly IBasketRepository repository;
-        private readonly ILogger<BasketController> _logger;
 
         public BasketController(
-            ILogger<BasketController> logger,
             IBasketRepository repository)
         {
-            _logger = logger;
             this.repository = repository;
         }
 
@@ -40,7 +37,7 @@ namespace BasicShopping.API.Controllers
 
             return Ok();
         }
-  
+
 
 
         [HttpGet("{customerId}")]
@@ -51,21 +48,7 @@ namespace BasicShopping.API.Controllers
 
             return Ok(basket ?? new CustomerBasket(customerId));
         }
-
-        //[HttpPost]
-        //[Route("update")]
-        //[ProducesResponseType(typeof(CustomerBasket), (int)HttpStatusCode.OK)]
-        //public async Task<ActionResult<CustomerBasket>> UpdateBasketAsync([FromBody] CustomerBasket value)
-        //{
-        //    return Ok(await repository.UpdateBasketAsync(value));
-        //}
-
-        //[HttpDelete("{id}")]
-        //[ProducesResponseType(typeof(void), (int)HttpStatusCode.OK)]
-        //public async Task DeleteBasketByIdAsync(string id)
-        //{
-        //    await repository.DeleteBasketAsync(id);
-        //}
+     
     }
 }
 

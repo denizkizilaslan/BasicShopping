@@ -1,6 +1,5 @@
 ﻿using BasicShopping.Business.Abstract;
 using BasicShopping.Entities.Concrete;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BasicShopping.API.Controllers
@@ -34,7 +33,5 @@ namespace BasicShopping.API.Controllers
 
             return Ok(result.ToList());
         }
-
-
     }
 }
